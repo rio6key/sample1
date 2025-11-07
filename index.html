@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Sample1 Display</title>
+    <title>Sample1 Bright Scene</title>
 
     <!-- A-Frame 本体 -->
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
@@ -10,12 +10,12 @@
 
   <body>
     <a-scene>
-      <!-- アセット -->
+      <!-- 🎒 アセット -->
       <a-assets>
         <a-asset-item id="sample1" src="sample1.glb"></a-asset-item>
       </a-assets>
 
-      <!-- sample1.glb モデル -->
+      <!-- 🦊 sample1.glb モデル -->
       <a-entity
         gltf-model="#sample1"
         position="0 0 0"
@@ -23,12 +23,27 @@
         scale="1 1 1">
       </a-entity>
 
-      <!-- カメラ（固定視点） -->
-      <a-entity camera position="0 1.6 3"></a-entity>
+      <!-- 💡 明るい照明 -->
+      <!-- 太陽光 -->
+      <a-entity 
+        light="type: directional; intensity: 2.0; castShadow: true; color: #ffffff" 
+        position="5 10 5">
+      </a-entity>
 
-      <!-- 照明 -->
-      <a-entity light="type: directional; intensity: 1" position="2 4 3"></a-entity>
-      <a-entity light="type: ambient; intensity: 0.5"></a-entity>
+      <!-- 環境光（全体を明るく） -->
+      <a-entity 
+        light="type: ambient; intensity: 1.2; color: #ffffff">
+      </a-entity>
+
+      <!-- 🌌 青空 -->
+      <a-sky color="#b3e5ff"></a-sky>
+
+      <!-- 🎥 カメラ（固定視点） -->
+      <a-entity 
+        camera 
+        position="0 1.6 3" 
+        look-controls>
+      </a-entity>
     </a-scene>
   </body>
 </html>
